@@ -1,0 +1,78 @@
+.materials
+    width: 100%
+    height: 100%
+    position: relative
+    top: 80px
+    &__classes
+        width: 100%
+        &-list
+            display: flex
+            justify-content: center
+            list-style: none
+        &-item
+            font-size: 20px
+            padding: 0 20px
+            border-right: 1px solid gray
+            &:last-child
+                border: 0
+            &_is_active
+                    color: $hover-color
+            &_grade
+                cursor: pointer
+                &:hover
+                    color: $hover-color
+
+    &__type
+        width: 100%
+        &-list
+            display: flex
+            justify-content: space-evenly
+            list-style: none
+        &-item
+            font-size: 18px
+            &_is_active
+                color: $hover-color
+            &_material
+                cursor: pointer
+                &:hover
+                    color: $hover-color
+    &__links
+        margin: 0 auto
+        width: 85%
+        border-radius: 30px
+        background-color: rgba(255, 255, 255, 0.8)
+        overflow-y: scroll
+        box-shadow: 0 0 10px rgba(0,0,0,0.5)
+        &::-webkit-scrollbar
+            display: none
+        &-list
+            height: 100%
+            overflow-y: scroll
+
+.divTable
+    display: table
+    width: 100%
+    overflow-y: scroll
+    height: auto
+
+.divTableRow
+    display: table-row
+    background-color: #fff
+    &:nth-child(odd)
+        background-color: #D9D8E6
+
+.divTableHead
+    background-color: #85B0EB
+    display: table-cell
+    height: 40px
+    text-align: center
+    vertical-align: middle
+    color: #fff
+
+.divTableCell
+    text-align: center
+    display: table-cell
+    padding: 5px 2px 5px 10px
+    vertical-align: middle
+.divTableBody
+    display: table-row-group
