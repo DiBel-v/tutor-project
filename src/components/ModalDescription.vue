@@ -21,37 +21,18 @@ export default {
             default:() => {}
         }
     },
-    data() {
-        return {
-            firstCallHandler: true
-        }
-    },
-    activated() {
-        const block = document.querySelector('.modal-description');
-        window.addEventListener('click', (e) => {
-            console.log(block.contains(e.target));
-            if (!block.contains(e.target)) {
-                this.$store.commit('SET_IS_MATERIAL_MODAL_OPENED', false);
-            }
-        });
-    },
     mounted() {
-        document.addEventListener('click', (e) => {
-            if (!this.firstCallHandler) {
-                const block = document.querySelector('.modal-description__block');
-                let targetElement = e.target;
-                do {
-                    if (targetElement === block) {
-                        return;
-                    }
-                    targetElement = targetElement.parentNode;
-                } while (targetElement)
-                this.firstCallHandler = true;
-                this.$store.commit('SET_IS_MATERIAL_MODAL_OPENED', false);
-            } else {
-                this.firstCallHandler = false;
-            }
-            
+        const modal = document.querySelector('.modal-description');
+        modal.addEventListener('click', (e) => {
+            const block = document.querySelector('.modal-description__block');
+            let targetElement = e.target;
+            do {
+                if (targetElement === block) {
+                    return;
+                }
+                targetElement = targetElement.parentNode;
+            } while (targetElement)
+            this.$store.commit('SET_IS_MATERIAL_MODAL_OPENED', false);
         });
     },
   methods: {

@@ -35,11 +35,8 @@ export default {
     },
     mounted() {
         const sliderWrapper = document.querySelector('.diplomas__wrapper-slide');
-        console.log(sliderWrapper);
-        console.log('Hammer', Hammer);
         const mc = new Hammer.Manager(sliderWrapper);
         mc.add(new Hammer.Pan());
-        console.log(mc);
         mc.on('panend', this.fingerMoveEnd);
     },
     created() {
@@ -69,7 +66,6 @@ export default {
         },
         fingerMoveEnd(e) {
             const horizontal = e.additionalEvent === 'panright' || e.additionalEvent === 'panleft';
-            console.log('e.delta', e.deltaX);
             if (horizontal) {
                 if (e.deltaX > 0) {
                     this.changeImage('left');

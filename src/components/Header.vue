@@ -7,16 +7,16 @@
             <div class="header__routing">
                 <ul class="header__routing-list">
                     <li class="header__routing-item">
-                        <router-link class="header__routing-item__link" to="/main">Главная</router-link>
+                        <router-link :class="{'header__routing-item__link_is_active': activeRoute === 'main'}" @click="activeRoute = 'main'" class="header__routing-item__link" to="/main">Главная</router-link>
                     </li>
                     <li class="header__routing-item">
-                        <router-link class="header__routing-item__link" to="/materials">Материалы</router-link>
+                        <router-link :class="{'header__routing-item__link_is_active': activeRoute === 'materials'}" @click="activeRoute = 'materials'" class="header__routing-item__link" to="/materials">Материалы</router-link>
                     </li>
                     <li class="header__routing-item">
-                        <router-link class="header__routing-item__link" to="/diplomas">Грамоты</router-link>
+                        <router-link :class="{'header__routing-item__link_is_active': activeRoute === 'diplomas'}" @click="activeRoute = 'diplomas'" class="header__routing-item__link" to="/diplomas">Грамоты</router-link>
                     </li>
                     <li class="header__routing-item">
-                        <router-link class="header__routing-item__link" to="/price">Услуги и цены</router-link>
+                        <router-link :class="{'header__routing-item__link_is_active': activeRoute === 'price'}" @click="activeRoute = 'price'" class="header__routing-item__link" to="/price">Услуги и цены</router-link>
                     </li>
                 </ul>
             </div>
@@ -43,6 +43,11 @@ export default {
           'isMobile',
           'isSidebarActive'
       ])
+    },
+    data() {
+        return {
+            activeRoute: 'main'
+        }
     },
   methods: {
       activateSidebar() {
