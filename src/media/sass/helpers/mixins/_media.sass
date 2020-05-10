@@ -1,0 +1,16 @@
+=mq($mq-breakpoint, $mq-breakpoints: $breakpoints)
+    $mq-media-query: ''
+
+    @if $mq-breakpoint == landscape or $mq-breakpoint == portrait
+        $mq-media-query: "(orientation: #{$mq-breakpoint})"
+
+    @else if $mq-breakpoint == retina
+        $mq-media-query: "(-webkit-min-device-pixel-rario: 2), (min-resolution: 2dppx)"
+
+    @else 
+        @if map-has-key($mq-breakpoints, $mq-breakpoint)
+            $mq-breakpoint: get-map-key($mq-breakpoints, $mq-breakpoint)
+        $mq-media-query: "(max-width: #{$mq-breakpoint})"
+
+    @media #{$mq-media-query}
+        @content

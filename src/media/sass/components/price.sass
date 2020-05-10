@@ -4,27 +4,63 @@
     justify-content: space-around
     align-items: center
     width: 100%
-    height: 100%
-    top: 0
-    z-index: -1
+    height: calc(100% - 140px)
+    top: 80px
+    +mq('portrait')
+        flex-direction: column
+    +mq('xs')
+        top: 60px
+        flex-direction: column
+        height: calc(100% - 120px)
     &__wrapper
         display: flex
         flex-direction: column
         justify-content: center
         align-items: center
         position: relative
-        width: 20%
-        height: 45%
+        width: 25%
+        height: 60%
         border-radius: 40px
         background-color: #fcf6f5ff
         color: #000
         box-shadow: 0 0 5px rgba(0,0,0,0.3)
+        +mq('portrait')
+            width: 60%
+            height: 25%
+        +mq('xs')
+            width: 80%
+            height: 25%
         &-img
-            width: 130px
-            height: 50px
+            width: 160px
+            height: 60px
+            +mq('portrait')
+                width: 180px
+                height: 70px
+            +mq('md')
+                width: 150px
+                height: 50px
+            +mq('xs')
+                width: 80px
+                height: 30px
         &-price
             padding: 40px 0
-            font-size: 20px
+            font-size: 26px
             font-style: italic
+            +mq('portrait')
+                font-size: 36px
+                padding-top: 80px
+            +mq('md')
+                font-size: 30px
+                padding-top: 50px
+            +mq('xs')
+                font-size: 22px
+                padding: 20px 0
         &-head
+            font-size: 38px
             margin: 0
+            +mq('portrait')
+                font-size: 50px
+            +mq('md')
+                font-size: 46px
+            +mq('xs')
+                font-size: 30px

@@ -12,12 +12,21 @@
         display: flex
         justify-content: space-around
         align-items: center
+        padding: 0
+        flex-wrap: wrap
+        +mq('xs')
+            flex-direction: row
     &__item
         display: flex
         &-img
             width: 24px
             height: 24px
+            +mq('xs')
+                width: 16px
+                height: 16px
         &-info
             color: #fff
             font-size: 18px
             padding: 0 0 0 5px
+            +mq('xs')
+                font-size: 16px
